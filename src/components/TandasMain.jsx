@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import TandasForm from "./TandasForm";
 import TandasController from "./TandasController";
+import { useTandas } from "../hooks/useTandas";
 
 const dataBase = [
     {id:1, paraca_1: 'barri', paraca_2: 'lucho', paraca_3: 'laurita', paraca_4: 'chechu'},
@@ -9,41 +10,10 @@ const dataBase = [
 
 ]
 const TandasMain = () => {
-    const [editData, setEditData] = useState(null);
-    const [tandas, setTandas] = useState(() => {
-        const saveTandas = window.localStorage.getItem('tandasData');
-        if(saveTandas) {
-            return JSON.parse(saveTandas);
-        } else {
-            return []
-        }
-    });
 
-    useEffect(() => {
-        window.localStorage.setItem('tandasData', JSON.stringify(tandas))
-    }, [tandas])
+    const { addTanda, editTanda, editData, tandas, setEditData, deleteTanda } = useTandas({})
 
-    const addTanda = (tanda)=> {
-        setTandas([
-            ...tandas,
-            tanda
-        ])
-    }
-
-    const editTanda = (tanda) => {
-        const newTandas = tandas.map(el => el.id === tanda.id ? tanda : el)
-        setTandas(newTandas)
-        setEditData(null)
-    }
-
-    const deleteTanda = id => {
-        const isDelete = window.confirm(`Vas a eliminar la tanda ${id}`)
-        if(isDelete) {
-            const newTandas = tandas.filter(el => el.id !== id)
-            setTandas(newTandas);
-        }
-    }
-
+    console.log(tandas, "culo")
     const endOfDay = () => {
         localStorage.clear();
     }

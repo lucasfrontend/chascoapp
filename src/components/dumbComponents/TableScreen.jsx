@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { useTandas } from "../../hooks/useTandas";
 import ReactScrollableFeed from 'react-scrollable-feed'
 
 const TableScreen = () => {
-    const [tanda, setTanda] = useState(JSON.parse(localStorage.getItem('tandasData')))
-
-    console.log(tanda)
+//    const [tanda, setTanda] = useState(JSON.parse(localStorage.getItem('tandasData')))
+    const { tandas } = useTandas({})
+    console.log(tandas)
     
     return <>
         <table>
@@ -17,9 +18,9 @@ const TableScreen = () => {
                 </tr>
             </thead>
             <tbody>
-                {tanda?.map((tanda, index) => (
+                {tandas?.map((tanda, index) => (
                     <tr key={tanda.id}>
-                        <td>{tanda.index}</td>
+                        <td>{tanda.id}</td>
                         <td>{tanda.paraca_1}</td>
                         <td>{tanda.paraca_2}</td>
                         <td>{tanda.paraca_3}</td>
