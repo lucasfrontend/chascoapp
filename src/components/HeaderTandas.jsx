@@ -4,24 +4,35 @@ import { Link } from 'react-router-dom'
 
 const HeaderTandas = ({ tandas }) => {
     return <>
-            <div class=" p-3 flex w-full items-center">
-                <div class="flex items-center text-3xl text-gray-900 dark:text-white">
-                    <img src={logo} class="w-32 mr-1 rounded-full" alt="SDCH" />
-                </div>
-                <div class="ml-auto sm:flex hidden items-center justify-end">
-                    <div class="text-right">
-                        <div class="text-light text-gray-400 dark:text-gray-400">Tandas</div>
-                        <div class="text-sdch text-lg dark:text-white">{ tandas.length }</div>
-                    </div>
-                    <a href="/table" target="_blank">
+        <div class="sm:px-7 sm:pt-7 px-4 pt-4 flex flex-col w-full border-b border-gray-200 bg-white dark:bg-gray-900 dark:text-white dark:border-gray-800 sticky top-0">
+          <div class="flex w-full items-center">
+            <div class="flex items-center text-3xl text-gray-900 dark:text-white">
+              <img src="https://assets.codepen.io/344846/internal/avatars/users/default.png?fit=crop&format=auto&height=512&version=1582611188&width=512" class="w-12 mr-4 rounded-full" alt="profile" />
+              Mert Cukuren
+            </div>
+            <div class="ml-auto sm:flex hidden items-center justify-end">
+              <div class="text-right">
+                <div class="text-xs text-gray-400 dark:text-gray-400">Account balance:</div>
+                <div class="text-gray-900 text-lg dark:text-white"> { tandas.lenght} </div>
+              </div>
+              <a href="/table" target="_blank">
                         <button className="p-2 hover:bg-active text-sdch w-10 h-10 ml-4 text-light shadow dark:text-gray-400 rounded-full flex items-center justify-center border border-gray-200 dark:border-gray-700">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M3 5a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2h-2.22l.123.489.804.804A1 1 0 0113 18H7a1 1 0 01-.707-1.707l.804-.804L7.22 15H5a2 2 0 01-2-2V5zm5.771 7H5V5h10v7H8.771z" clip-rule="evenodd"/>
-                            </svg>
+                        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
                         </button>
                     </a>
-                </div>
             </div>
+          </div>
+          <div class="flex items-center space-x-3 sm:mt-7 mt-4">
+            <a href="#" class="px-3 border-b-2 border-blue-500 text-blue-500 dark:text-white dark:border-white pb-1.5">Activities</a>
+            <a href="#" class="px-3 border-b-2 border-transparent text-gray-600 dark:text-gray-400 pb-1.5">Transfer</a>
+            <a href="#" class="px-3 border-b-2 border-transparent text-gray-600 dark:text-gray-400 pb-1.5 sm:block hidden">Budgets</a>
+            <a href="#" class="px-3 border-b-2 border-transparent text-gray-600 dark:text-gray-400 pb-1.5 sm:block hidden">Notifications</a>
+            <a href="#" class="px-3 border-b-2 border-transparent text-gray-600 dark:text-gray-400 pb-1.5 sm:block hidden">Cards</a>
+          </div>
+        </div>
 
     </>
 

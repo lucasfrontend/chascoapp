@@ -2,7 +2,7 @@ import React from "react";
 // import Tanda from './dumbComponents/tanda'
 import HeaderTandas from './HeaderTandas'
 
-const TandasController = ({ tandas, setEditData, deleteTanda }) => {
+const TandasController = ({ tandas, setEditData, deleteTanda, endOfDay }) => {
     return <>
     <div class="flex-grow bg-darki dark:bg-gray-900 overflow-y-auto">
         <HeaderTandas tandas={tandas} />
@@ -88,7 +88,7 @@ const TandasController = ({ tandas, setEditData, deleteTanda }) => {
             </div>
         </div>
 
-        <button>Fin del día</button>
+        <button onClick={() => endOfDay(tandas)}>Fin del día</button>
     </div>
     </>
 

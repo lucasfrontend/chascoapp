@@ -39,7 +39,7 @@ const TandasForm = ({ addTanda, editTanda, editData }) => {
             if(editData !== null) {
                 editTanda(formData)
             } else {
-                formData.id = Date.now()
+                formData.id = Math.random().toString(36).substring(0, 7)
                 addTanda(formData)
                 setFormData({
                     id: null,

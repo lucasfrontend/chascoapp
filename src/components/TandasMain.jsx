@@ -45,7 +45,8 @@ const TandasMain = () => {
     }
 
     const endOfDay = () => {
-        localStorage.clear();
+        alert("Vas a borrar todas las tandas.")
+        window.localStorage.clear();
     }
     return <>
           <div class="flex-grow flex overflow-x-hidden">
