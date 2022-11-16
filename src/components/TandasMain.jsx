@@ -1,13 +1,13 @@
 import React, {useEffect, useState} from "react";
 import TandasForm from "./TandasForm";
 import TandasController from "./TandasController";
-
+/*
 const dataBase = [
     {id:1, paraca_1: 'barri', paraca_2: 'lucho', paraca_3: 'laurita', paraca_4: 'chechu'},
     {id:2, paraca_1: 'nadie', paraca_2: 'nadia', paraca_3: 'laurita', paraca_4: 'chechu'},
     {id:3, paraca_1: 'ruben', paraca_2: 'noe', paraca_3: 'laurita', paraca_4: 'chechu'}
 
-]
+]*/
 const TandasMain = () => {
     const [editData, setEditData] = useState(null);
     const [tandas, setTandas] = useState(() => {

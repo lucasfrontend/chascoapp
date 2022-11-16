@@ -17,7 +17,7 @@ const TandasForm = ({ addTanda, editTanda, editData }) => {
     
     useEffect(() => {
         if(editData !== null){
-            setFormData(editData)
+            setFormData(editData);
         }else {
             setFormData({
                 id: null,
@@ -63,7 +63,7 @@ const TandasForm = ({ addTanda, editTanda, editData }) => {
 
     return <>
             <div class="bg-maincl text-sdch xl:w-72 w-48 flex-shrink-0 border-r border-gray-200 dark:border-gray-800 h-full overflow-y-auto lg:block hidden p-5">
-                <h3 value={formData.id}>{formData.id}</h3>
+            {formData.id ? <h3 value={formData.id}>{formData.id}</h3> : <h1>Nueva tanda</h1>}
               <form className="space-y-4 mt-3" onSubmit={handleSubmit}>
                     <div class="bg-dark p-3 w-full flex flex-col rounded-md dark:bg-gray-800 shadow">
                         <div class="flex xl:flex-row flex-col items-center font-medium text-gray-900 dark:text-white pb-2 mb-2 xl:border-b border-gray-200 border-opacity-75 dark:border-gray-700 w-full">
@@ -116,7 +116,10 @@ const TandasForm = ({ addTanda, editTanda, editData }) => {
                     </select>
 
                     <input class="bg-transparent hover:bg-active hover:text-white cursor-pointer font-semibold py-2 px-4 border border-blue-500 hover:border-transparent rounded" type="submit" value="Enviar"/>
-                    <input class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" type="reset" value="Cancelar"/>
+                    <input class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" type="reset" value="REset"/>
+
+
+
               </form>
               <div class="text-xs text-gray-400 tracking-wider">USERS</div>
               <div class="relative mt-2">
