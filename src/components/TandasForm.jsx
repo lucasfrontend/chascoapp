@@ -116,7 +116,7 @@ const TandasForm = ({ addTanda, editTanda, editData }) => {
                     </select>
 
                     <input class="bg-transparent hover:bg-active hover:text-white cursor-pointer font-semibold py-2 px-4 border border-blue-500 hover:border-transparent rounded" type="submit" value="Enviar"/>
-                    <input class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" type="reset" value="Cancelar"/>
+                    <input class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" type="reset" value="reset"/>
               </form>
               <div class="text-xs text-gray-400 tracking-wider">USERS</div>
               <div class="relative mt-2">

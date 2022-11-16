@@ -36,7 +36,6 @@ export function useTandas(){
         }
     }
 
-
     return { addTanda, editTanda, editData, tandas, setEditData, deleteTanda }
 
 }
