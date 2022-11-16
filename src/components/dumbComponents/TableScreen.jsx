@@ -45,7 +45,7 @@ const TableScreen = () => {
                             return <tr key={index}>
                                 <td className="sm:p-3 py-2 px-1 border-b border-gray-200 dark:border-gray-800 text-green-500 text-light">
                                     <div className="flex items-center">
-                                        { tanda.id}
+                                        { index}
                                     </div>
                                 </td>
                                 <td className="sm:p-3 py-2 px-1 border-b border-gray-200 dark:border-gray-800 text-green-500 text-light">

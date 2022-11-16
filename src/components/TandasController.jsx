@@ -28,7 +28,7 @@ const TandasController = ({ tandas, setEditData, deleteTanda, endOfDay }) => {
                                 return <tr key={index}>
                                 <td class="sm:p-3 py-2 px-1 border-b border-gray-200 dark:border-gray-800">
                                     <div class="flex items-center">
-                                        { tanda.id}
+                                        { index}
                                     </div>
                                 </td>
                                 <td class="sm:p-3 py-2 px-1 border-b border-gray-200 dark:border-gray-800 text-light">
@@ -55,7 +55,7 @@ const TandasController = ({ tandas, setEditData, deleteTanda, endOfDay }) => {
                                     </div>
                                 </td>
                                 <td>
-                                    <button class="bg-blue-500 text-light" onClick={() => setEditData(tanda)}>Editar</button>
+                                    <button onClick={() => setEditData(tanda)}>Editar</button>
 
                                     <button class="text-light" onClick={() => deleteTanda(tanda.id)}>Eliminar</button>
                                 </td>

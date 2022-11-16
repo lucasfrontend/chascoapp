@@ -1,15 +1,8 @@
-import React, {useEffect, useState} from "react";
-import TandasForm from "./TandasForm";
-import TandasController from "./TandasController";
-/*
-const dataBase = [
-    {id:1, paraca_1: 'barri', paraca_2: 'lucho', paraca_3: 'laurita', paraca_4: 'chechu'},
-    {id:2, paraca_1: 'nadie', paraca_2: 'nadia', paraca_3: 'laurita', paraca_4: 'chechu'},
-    {id:3, paraca_1: 'ruben', paraca_2: 'noe', paraca_3: 'laurita', paraca_4: 'chechu'}
+import { useState, useEffect} from 'react'
 
-]*/
-const TandasMain = () => {
+export function useTandas(){
     const [editData, setEditData] = useState(null);
+    const [selected, setSelected] = useState(false)
     const [tandas, setTandas] = useState(() => {
         const saveTandas = window.localStorage.getItem('tandasData');
         if(saveTandas) {
@@ -34,8 +27,9 @@ const TandasMain = () => {
         const newTandas = tandas.map(el => el.id === tanda.id ? tanda : el)
         setTandas(newTandas)
         setEditData(null)
+        changeColorSelected(editData)
     }
-
+    
     const deleteTanda = id => {
         const isDelete = window.confirm(`Vas a eliminar la tanda ${id}`)
         if(isDelete) {
@@ -44,16 +38,7 @@ const TandasMain = () => {
         }
     }
 
-    const endOfDay = () => {
-        alert("Vas a borrar todas las tandas.")
-        window.localStorage.clear();
-    }
-    return <>
-          <div class="flex-grow flex overflow-x-hidden">
-            <TandasForm addTanda={addTanda} editTanda={editTanda} editData={editData} />
-            <TandasController tandas={tandas} setEditData={setEditData} deleteTanda={deleteTanda} endOfDay={endOfDay}/>
-      </div>
-        </>
-}
 
-export default TandasMain
+    return { addTanda, editTanda, editData, tandas, setEditData, deleteTanda }
+
+}

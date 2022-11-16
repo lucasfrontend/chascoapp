@@ -3,6 +3,8 @@ import logo from '../assets/logo.png'
 import { Link } from 'react-router-dom'
 
 const HeaderTandas = ({ tandas }) => {
+
+  console.log("tandas en el header", tandas)
     return <>
         <div class="sm:px-7 sm:pt-7 px-4 pt-4 flex flex-col w-full border-b border-gray-200 bg-white dark:bg-gray-900 dark:text-white dark:border-gray-800 sticky top-0">
           <div class="flex w-full items-center">
@@ -12,17 +14,17 @@ const HeaderTandas = ({ tandas }) => {
             </div>
             <div class="ml-auto sm:flex hidden items-center justify-end">
               <div class="text-right">
-                <div class="text-xs text-gray-400 dark:text-gray-400">Account balance:</div>
-                <div class="text-gray-900 text-lg dark:text-white"> { tandas.lenght} </div>
+                <div class="text-xs text-gray-400 dark:text-gray-400">Total</div>
+                <div class="text-dark"> { tandas.length } </div>
               </div>
               <a href="/table" target="_blank">
-                        <button className="p-2 hover:bg-active text-sdch w-10 h-10 ml-4 text-light shadow dark:text-gray-400 rounded-full flex items-center justify-center border border-gray-200 dark:border-gray-700">
-                        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                        </svg>
-                        </button>
-                    </a>
+                <button className="p-2 hover:bg-active text-sdch w-10 h-10 ml-4 text-light shadow dark:text-gray-400 rounded-full flex items-center justify-center border border-gray-200 dark:border-gray-700">
+                  <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </button>
+              </a>
             </div>
           </div>
           <div class="flex items-center space-x-3 sm:mt-7 mt-4">
