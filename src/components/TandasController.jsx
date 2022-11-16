@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 // import Tanda from './dumbComponents/tanda'
 import HeaderTandas from './HeaderTandas'
 
-const TandasController = ({ tandas, setEditData, deleteTanda }) => {
+const TandasController = ({ tandas, setEditData, deleteTanda, endOfDay }) => {
+
+    
     return <>
-    <div class="flex-grow bg-darki dark:bg-gray-900 overflow-y-auto">
+    <div class="flex-grow bg-sdch dark:bg-gray-900 overflow-y-auto">
         <HeaderTandas tandas={tandas} />
         <div class="sm:p-7 p-4">
             <table class="w-full text-left">
@@ -53,10 +55,9 @@ const TandasController = ({ tandas, setEditData, deleteTanda }) => {
                                         </svg>
                                     </div>
                                 </td>
-                                
-
                                 <td>
-                                    <button class="bg-blue-500 text-light" onClick={() => setEditData(tanda)}>Editarrrr</button>
+                                    <button class="bg-blue-500 text-light" onClick={() => setEditData(tanda)}>Editar</button>
+
                                     <button class="text-light" onClick={() => deleteTanda(tanda.id)}>Eliminar</button>
                                 </td>
                         
@@ -88,7 +89,7 @@ const TandasController = ({ tandas, setEditData, deleteTanda }) => {
             </div>
         </div>
 
-        <button>Fin del día</button>
+        <button onClick={() => endOfDay(tandas)}>Fin del día</button>
     </div>
     </>
 
