@@ -4,22 +4,46 @@ import PilotosTabla from "../components/SettingForms/PilotosTabla";
 import '../Pages/setting.css'
 
 const pilotsInitialDb= [
-  { name: 'Tano', id: null},
-  { name: 'Pilotito', id: null},
+  { 
+    name: 'Tano', 
+    id: null
+  },
+  { 
+    name: 'Pilotito', 
+    id: null
+}
 
 ]
 
 const Setting = () => {
-    const [formPilotsDb, setFormPilotsDb ] = useState(pilotsInitialDb);
+    const [formPilotsDb, setFormPilotsDb ] = useState([]);
     const [dataToEditPilots, setDataToEditPilot] = useState(null)
 
     const createDataPilots = (data) => {
-      data.id = Date.now()
-      console.log(data)
-//      setFormPilotsDb(...formPilotsDb, data)
+      data.id = Math.random().toString(36).substring(0, 7)
+      setFormPilotsDb([
+        ...formPilotsDb, 
+        data])
     };
-    const updateDataPilots = (data) => {};
-    const deleteDataPilots = (id) => {};
+
+    const updateDataPilots = (data) => {
+      let newData = formPilotsDb.map(el => el.id === data.id ? data : el)
+      setFormPilotsDb(newData)
+      setDataToEditPilot(null)
+    };
+
+    const deleteDataPilots = (id) => {
+      console.log("el id es", id)
+      let isDelete = confirm(`Tas segura de eliminar a ${id}`)
+      if(isDelete){
+        let newData = formPilotsDb.filter(el => el.id !== id)
+        setFormPilotsDb(newData)
+        setDataToEditPilot(null)
+
+      } else {
+
+      }
+    };
 
     return <>
       <div class="main-container">

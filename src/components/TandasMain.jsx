@@ -34,6 +34,7 @@ const TandasMain = () => {
     const editTanda = (tanda) => {
         const newTandas = tandas.map(el => el.id === tanda.id ? tanda : el)
         setTandas(newTandas)
+        //error aca????
         setEditData(null)
     }
 
@@ -42,6 +43,7 @@ const TandasMain = () => {
         if(isDelete) {
             const newTandas = tandas.filter(el => el.id !== id)
             setTandas(newTandas);
+        //error aca????
             setEditData(null)
         }
     }

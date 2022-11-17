@@ -57,24 +57,23 @@ const TandasForm = ({ addTanda, editTanda, editData }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        
-            if(editData !== null) {
-                editTanda(formData)
-            } else {
-                formData.id = Math.random().toString(36).substring(0, 7)
-                addTanda(formData)
-                setFormData({
-                    id: null,
-                    number_tanda: '',
-                    paraca_1: '',
-                    paraca_2: '',
-                    paraca_3: '',
-                    paraca_4: '',
-                    pilot: '',
-                    altitude: '',
-                    avion: ''
-                })
-            }
+        if(editData !== null) {
+            editTanda(formData)
+        } else {
+            formData.id = Math.random().toString(36).substring(0, 7)
+            addTanda(formData)
+            setFormData({
+                id: null,
+                number_tanda: '',
+                paraca_1: '',
+                paraca_2: '',
+                paraca_3: '',
+                paraca_4: '',
+                pilot: '',
+                altitude: '',
+                avion: ''
+            })
+        }
     }
 
     const handleChange =(e) => {
