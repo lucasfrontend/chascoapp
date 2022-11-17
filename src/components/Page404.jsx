@@ -2,7 +2,10 @@ import React from "react";
 
 const Page404 = () => {
     return <>
-        <h3>beeer</h3>
+    <div className="bg-dark h-screen">
+        <h3>404</h3>
+
+    </div>
 
     </>
 

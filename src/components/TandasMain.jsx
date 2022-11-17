@@ -10,6 +10,7 @@ const dataBase = [
 ]*/
 const TandasMain = () => {
     const [editData, setEditData] = useState(null);
+    
     const [tandas, setTandas] = useState(() => {
         const saveTandas = window.localStorage.getItem('tandasData');
         if(saveTandas) {
@@ -41,19 +42,20 @@ const TandasMain = () => {
         if(isDelete) {
             const newTandas = tandas.filter(el => el.id !== id)
             setTandas(newTandas);
+            setEditData(null)
         }
     }
 
     const endOfDay = () => {
-        alert("Vas a borrar todas las tandas.")
+        confirm("Vas a borrar todas las tandas.")
         window.localStorage.clear();
     }
     return <>
-          <div class="flex-grow flex overflow-x-hidden">
+        <div className="flex-grow flex overflow-x-hidden">
             <TandasForm addTanda={addTanda} editTanda={editTanda} editData={editData} />
             <TandasController tandas={tandas} setEditData={setEditData} deleteTanda={deleteTanda} endOfDay={endOfDay}/>
-      </div>
-        </>
+        </div>
+    </>
 }
 
 export default TandasMain

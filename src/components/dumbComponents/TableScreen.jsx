@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ReactScrollableFeed from 'react-scrollable-feed'
+import Footer from "./Footer";
 
 const TableScreen = () => {
     const [tandas, setTandas] = useState(() => {
@@ -20,7 +21,7 @@ const TableScreen = () => {
       console.log('A ver ahora', tandas);
 
     return <>
-        <table className="w-screen" >
+        <table className="w-screen bg-green" >
             <thead>
                 <tr style={{
                     height: '10vh'
@@ -58,14 +59,14 @@ const TableScreen = () => {
                                         { tanda.paraca_1}
                                     </div>
                                 </td>
-                                <td class="sm:p-3 py-2 px-1 border-b border-gray-200 dark:border-gray-800 md:table-cell hidden text-light">{ tanda.paraca_2}</td>
-                                <td class="sm:p-3 py-2 px-1 border-b border-gray-200 dark:border-gray-800 text-green-500 text-light">{ tanda.paraca_3}</td>
-                                <td class="sm:p-3 py-2 px-1 border-b border-gray-200 dark:border-gray-800 text-green-500 text-light">{ tanda.paraca_4}</td>
-                                <td class="sm:p-3 py-2 px-1 border-b border-gray-200 dark:border-gray-800 text-green-500 text-light">{ tanda.pilot}</td>
-                                <td class="sm:p-3 py-2 px-1 border-b border-gray-200 dark:border-gray-800 text-green-500 text-light">{ tanda.altitude}</td>
-                                <td class="sm:p-3 py-2 px-1 border-b border-gray-200 dark:border-gray-800 text-green-500 text-light">{ tanda.avion}
-                                    <div class="flex items-center">
-                                        <svg viewBox="0 0 24 24" class="w-4 mr-5 text-green-500" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <td className="sm:p-3 py-2 px-1 border-b border-gray-200 dark:border-gray-800 md:table-cell hidden text-light">{ tanda.paraca_2}</td>
+                                <td className="sm:p-3 py-2 px-1 border-b border-gray-200 dark:border-gray-800 text-green-500 text-light">{ tanda.paraca_3}</td>
+                                <td className="sm:p-3 py-2 px-1 border-b border-gray-200 dark:border-gray-800 text-green-500 text-light">{ tanda.paraca_4}</td>
+                                <td className="sm:p-3 py-2 px-1 border-b border-gray-200 dark:border-gray-800 text-green-500 text-light">{ tanda.pilot}</td>
+                                <td className="sm:p-3 py-2 px-1 border-b border-gray-200 dark:border-gray-800 text-green-500 text-light">{ tanda.altitude}</td>
+                                <td className="sm:p-3 py-2 px-1 border-b border-gray-200 dark:border-gray-800 text-green-500 text-light">{ tanda.avion}
+                                    <div className="flex items-center">
+                                        <svg viewBox="0 0 24 24" className="w-4 mr-5 text-green-500" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                             <line x1="12" y1="5" x2="12" y2="19"></line>
                                             <polyline points="19 12 12 19 5 12"></polyline>
                                         </svg>
@@ -78,6 +79,7 @@ const TableScreen = () => {
                 </div>
             </tbody>
         </table>
+        <Footer />
 
     </>
 
