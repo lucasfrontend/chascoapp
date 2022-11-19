@@ -48,14 +48,10 @@ const TandasMain = () => {
         }
     }
 
-    const endOfDay = () => {
-        confirm("Vas a borrar todas las tandas.")
-        window.localStorage.clear();
-    }
     return <>
         <div className="flex-grow flex overflow-x-hidden">
             <TandasForm addTanda={addTanda} editTanda={editTanda} editData={editData} />
-            <TandasController tandas={tandas} setEditData={setEditData} deleteTanda={deleteTanda} endOfDay={endOfDay}/>
+            <TandasController tandas={tandas} setEditData={setEditData} deleteTanda={deleteTanda}/>
         </div>
     </>
 }

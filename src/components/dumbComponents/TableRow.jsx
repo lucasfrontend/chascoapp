@@ -1,14 +1,14 @@
 import React from "react";
 
-const TableRow = ({ el, setDataToEditPilot, deleteDataPilots }) => {
+const TableRow = ({ el, setEditData, deletePilot }) => {
 
     return <>
         <tr>
-            <td> { el.name}</td>
+            <td> { el.name_pilot}</td>
             <td> { el.id}</td>
             <td>
-                <button onClick={() => setDataToEditPilot(el)}>Edit</button>
-                <button onClick={() => deleteDataPilots(el.id)}>Delete</button>
+                <button onClick={() => setEditData(el)}>Edit</button>
+                <button onClick={() => deletePilot(el.id)}>Delete</button>
             </td>
         </tr>
     </>

@@ -1,1 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap");
+
+.logo-sdch {
+    background-image: url('./assets/logo-letras_verdes.png');
+    background-repeat: no-repeat;
+    background-position: center; 
+    min-height: 900px;
+    min-width: 900px;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.1;
+    z-index: -0;
+  }
+
+.table- {
+    width: 100%;
+}

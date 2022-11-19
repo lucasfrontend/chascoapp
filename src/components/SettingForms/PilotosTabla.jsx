@@ -1,7 +1,7 @@
 import React from "react";
 import TableRow from "../dumbComponents/TableRow";
 
-const PilotosTabla = ({ data, setDataToEditPilot, deleteDataPilots }) => {
+const PilotosTabla = ({ pilots, setEditData, deletePilot}) => {
  
     return <>
             <table class="table">
@@ -15,9 +15,9 @@ const PilotosTabla = ({ data, setDataToEditPilot, deleteDataPilots }) => {
                 </thead>
                 <tbody>
                     {
-                        data.length === 0 ? 
+                        pilots.length === 0 ? 
                         (<tr><td className="table-auto">Que Pilot vuela hoy?</td></tr>) 
-                        : data.map( el => <TableRow key={el.id} el={el} setDataToEditPilot={setDataToEditPilot} deleteDataPilots={deleteDataPilots}/>)
+                        : pilots.map( el => <TableRow key={el.id} el={el} setEditData={setEditData} deletePilot={deletePilot}/>)
                     }
 
                 </tbody>

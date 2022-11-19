@@ -1,58 +1,57 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PilotosForm from "../components/SettingForms/PilotosForm";
 import PilotosTabla from "../components/SettingForms/PilotosTabla";
 import '../Pages/setting.css'
 
-const pilotsInitialDb= [
-  { 
-    name: 'Tano', 
-    id: null
-  },
-  { 
-    name: 'Pilotito', 
-    id: null
-}
-
-]
-
 const Setting = () => {
-    const [formPilotsDb, setFormPilotsDb ] = useState([]);
-    const [dataToEditPilots, setDataToEditPilot] = useState(null)
-
-    const createDataPilots = (data) => {
-      data.id = Math.random().toString(36).substring(0, 7)
-      setFormPilotsDb([
-        ...formPilotsDb, 
-        data])
-    };
-
-    const updateDataPilots = (data) => {
-      let newData = formPilotsDb.map(el => el.id === data.id ? data : el)
-      setFormPilotsDb(newData)
-      setDataToEditPilot(null)
-    };
-
-    const deleteDataPilots = (id) => {
-      console.log("el id es", id)
-      let isDelete = confirm(`Tas segura de eliminar a ${id}`)
-      if(isDelete){
-        let newData = formPilotsDb.filter(el => el.id !== id)
-        setFormPilotsDb(newData)
-        setDataToEditPilot(null)
-
+  const [editData, setEditData] = useState(null);
+    
+  const [pilots, setPilots] = useState(() => {
+      const savePilots = window.localStorage.getItem('pilotsData');
+      if(savePilots) {
+          return JSON.parse(savePilots);
       } else {
-
+          return []
       }
-    };
+  });
 
-    return <>
+  useEffect(() => {
+      window.localStorage.setItem('pilotsData', JSON.stringify(pilots))
+  }, [pilots])
+
+  const addPilot = (pilot)=> {
+      setPilots([
+          ...pilots,
+          pilot
+      ])
+  }
+
+  const editPilot = (pilot) => {
+      const newPilots = pilots.map(el => el.id === pilot.id ? pilot : el)
+      setPilots(newPilots)
+      //error aca????
+      setEditData(null)
+  }
+
+  const deletePilot = id => {
+      const isDelete = window.confirm(`Vas a eliminar la tanda ${id}`)
+      if(isDelete) {
+          const newPilots = pilots.filter(el => el.id !== id)
+          setPilots(newPilots);
+      //error aca????
+          setEditData(null)
+      }
+  }
+
+
+return <>
       <div class="main-container">
       <div class="user-box first-box">
 
         <div class="discount card">
           <div class="title">Pilotos</div>
-          <PilotosForm createDataPilots={createDataPilots} updateDataPilots={updateDataPilots} dataToEditPilots={dataToEditPilots} setDataToEditPilot={setDataToEditPilot}/>
-          <PilotosTabla data={formPilotsDb} setDataToEditPilot={setDataToEditPilot} deleteDataPilots={deleteDataPilots}/>
+          <PilotosForm addPilot={addPilot} editPilot={editPilot} editData={editData} />
+          <PilotosTabla pilots={pilots} setEditData={setEditData} deletePilot={deletePilot} />
 
 
 
