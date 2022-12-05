@@ -21,7 +21,6 @@ function App() {
   return (
       <BrowserRouter>
       <Routes>
-        <Route path='/table' element={<TableScreen />}></Route>
         <Route path='/' element={<Layout />}>
           <Route path='/home' element={<TandasMain />} /> 
           <Route path='/data' element={<Data />}/>
@@ -29,6 +28,7 @@ function App() {
           <Route path='/setting' element={<Setting />}/>
           <Route path='*' element={<Page404 />} />
         </Route>
+        <Route path='/table' element={<TableScreen />}></Route>
       </Routes>
       </BrowserRouter>
   )
