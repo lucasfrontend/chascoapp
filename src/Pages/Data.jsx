@@ -1,4 +1,4 @@
-import { data } from "autoprefixer";
+// import { data } from "autoprefixer";
 import React, { useState } from "react";
 import PilotsChart from "../graficos/PilotsChart";
 
