@@ -27,7 +27,13 @@ module.exports = {
       'header-tandas': '#EEE',
       'red': '#d14b69',
       'green': '#1aa385',
-      'blue': '#3e4ec2'
+      'blue': '#3e4ec2',
+      'blue-cards': '#10122b',
+      'blue-light': '#10122b5c',
+
+      'verdechasco': '#006732',
+      'azulchasco': '',
+      'rojochasco': ''
     },
     extend: {},
   },

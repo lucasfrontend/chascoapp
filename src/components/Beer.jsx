@@ -4,6 +4,7 @@ const Beer = () => {
     return <>
     <div className="bg-lightest">
     <div className="container mx-auto px-4 sm:px-8">
+      {/*/
   <div className="py-8">
     <div>
       <h2 className="text-2xl font-semibold leading-tight">Invoices</h2>
@@ -266,6 +267,8 @@ const Beer = () => {
       </div>
     </div>
   </div>
+      
+      */}
 </div>
 </div>
     </>

@@ -2,13 +2,20 @@ import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Layout from './components/Layout'
 import TandasMain from './components/TandasMain'
-import Data from './components/Data'
+import Data from './Pages/Data'
 import Beer from './components/Beer'
 import TableScreen from './components/dumbComponents/TableScreen'
 import Page404 from './components/Page404'
 import Setting from './Pages/Setting'
 import './App.css'
-
+/*
+horario despegue
+tama;o foto
+slots
+cervezasss
+flecha a input de horario
+boton final del dia
+*/
 function App() {
 
   return (

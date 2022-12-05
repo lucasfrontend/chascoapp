@@ -1,7 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
 
-// const pilots = ['Tano,', 'Pilotito', 'Fer Lopez', 'Otro']
-
 const TandasForm = ({ addTanda, editTanda, editData }) => {
 
     const color = useRef('bg-light')
@@ -18,15 +16,15 @@ const TandasForm = ({ addTanda, editTanda, editData }) => {
         paraca_4: '',
         pilot: '',
         altitude: '',
-        avion: ''
+        avion: '',
+        time: ''
     })
     
     useEffect(() => {
         if(editData !== null){
-            changeColorEdit()
             setFormData(editData);
+            changeColorEdit()
         }else {
-            changeColorOrigin()
             setFormData({
                 id: null,
                 number_tanda: '',
@@ -36,8 +34,10 @@ const TandasForm = ({ addTanda, editTanda, editData }) => {
                 paraca_4: '', 
                 pilot: '',
                 altitude: '',
-                avion: ''
+                avion: '',
+                time: ''
             })
+            changeColorOrigin()
         }
     }, [editData])
     
@@ -73,7 +73,8 @@ const TandasForm = ({ addTanda, editTanda, editData }) => {
                 paraca_4: '',
                 pilot: '',
                 altitude: '',
-                avion: ''
+                avion: '',
+                time: ''
             })
         }
     }
@@ -86,7 +87,6 @@ const TandasForm = ({ addTanda, editTanda, editData }) => {
     }
 
     const handleReset =(e) => {
-        changeColorOrigin()
         setFormData({
             id: null,
             number_tanda: '',
@@ -96,52 +96,54 @@ const TandasForm = ({ addTanda, editTanda, editData }) => {
             paraca_4: '',
             pilot: '',
             altitude: '',
-            avion: ''
+            avion: '',
+            time: ''
         })
+        changeColorOrigin()
     }
 
     return <>
-    <div className="mt-6 ml-6 mb-6">
+    <div className="mt-4 ml-4 mb-2">
         <div className="blue_sdch" ref={color}>
             <div className="activity card">
             {formData.id ? <div class="title text-green">Editar Tanda {formData.number_tanda}</div> : <div class="title text-blue">Nueva Tanda {formData.id}</div>}
-                <form className="space-y-4 mt-3" onSubmit={handleSubmit}>
-                        <div className="bg-dark  p-3 w-full flex flex-col rounded-md dark:bg-gray-800 shadow">
-                            <div className="flex xl:flex-row flex-col items-center font-medium text-gray-900 dark:text-white pb-2 mb-2 xl:border-b border-gray-200 border-opacity-75 dark:border-gray-700 w-full">
+                <form className="space-y-3 mt-3" onSubmit={handleSubmit}>
+                        <div className="bg-dark p-2 w-full flex flex-col rounded-md dark:bg-gray-800 shadow">
+                            <div className="flex xl:flex-row flex-col">
                                 <label htmlFor="number_tanda" className="pr-2">Número</label>
                                 <input className="bg-dark w-full" type="number" name="number_tanda" min="1" onChange={handleChange} value={formData.number_tanda}/>
                             </div>
                         </div>
-                        <div className="bg-dark  p-3 w-full flex flex-col rounded-md dark:bg-gray-800 shadow">
-                            <div className="flex xl:flex-row flex-col items-center font-medium text-gray-900 dark:text-white pb-2 mb-2 xl:border-b border-gray-200 border-opacity-75 dark:border-gray-700 w-full">
+                        <div className="bg-dark  p-2 w-full flex flex-col rounded-md dark:bg-gray-800 shadow">
+                            <div className="flex xl:flex-row flex-col">
                                 <label htmlFor="paraca_1" className="pr-2">Plaza</label>
                                 <input className="bg-dark w-full" type="text" maxlength="23" name="paraca_1" onChange={handleChange} value={formData.paraca_1}/>
                             </div>
                         </div>
 
-                        <div className="bg-dark p-3 w-full flex flex-col rounded-md dark:bg-gray-800 shadow">
-                        <div className="flex xl:flex-row flex-col items-center font-medium text-gray-900 dark:text-white pb-2 mb-2 xl:border-b border-gray-200 border-opacity-75 dark:border-gray-700 w-full">
+                        <div className="bg-dark p-2 w-full flex flex-col rounded-md dark:bg-gray-800 shadow">
+                        <div className="flex xl:flex-row flex-col">
                             <label htmlFor="paraca_2" className="pr-2">Plaza</label>
                             <input className="bg-dark w-full" type="text" maxlength="23" name="paraca_2" onChange={handleChange} value={formData.paraca_2}/>
                         </div>
                         </div>
 
-                        <div className="bg-dark p-3 w-full flex flex-col rounded-md dark:bg-gray-800 shadow">
-                        <div className="flex xl:flex-row flex-col items-center font-medium text-gray-900 dark:text-white pb-2 mb-2 xl:border-b border-gray-200 border-opacity-75 dark:border-gray-700 w-full">
+                        <div className="bg-dark p-2 w-full flex flex-col rounded-md dark:bg-gray-800 shadow">
+                        <div className="flex xl:flex-row flex-col">
                             <label htmlFor="paraca_3" className="pr-2">Plaza</label>
                             <input className="bg-dark w-full" type="text" maxlength="23" name="paraca_3" onChange={handleChange} value={formData.paraca_3}/>
                         </div>
                         </div>
 
-                        <div className="bg-dark p-3 w-full flex flex-col rounded-md dark:bg-gray-800 shadow">
-                            <div className="flex xl:flex-row flex-col items-center font-medium text-gray-900 dark:text-white pb-2 mb-2 xl:border-b border-gray-200 border-opacity-75 dark:border-gray-700 w-full">
+                        <div className="bg-dark p-2 w-full flex flex-col rounded-md dark:bg-gray-800 shadow">
+                            <div className="flex xl:flex-row flex-col">
                                 <label htmlFor="paraca_4" className="pr-2">Plaza</label>
                                 <input className="bg-dark w-full" type="text" maxlength="23" name="paraca_4" onChange={handleChange} value={formData.paraca_4}/>
                             </div>
                         </div>
 
-                        <select name="pilot" className="bg-dark p-3 w-full flex flex-col rounded-md dark:bg-gray-800 shadow" onChange={handleChange} value={formData.pilot}>
-                            <option>PILOTO</option>
+                        <select name="pilot" className="bg-dark p-2 w-full flex flex-col rounded-md dark:bg-gray-800 shadow" onChange={handleChange} value={formData.pilot}>
+                            <option>Piloto</option>
                             {
                                 pilot_array ? (
                                     pilot_array.length === 0 ? 
@@ -151,23 +153,31 @@ const TandasForm = ({ addTanda, editTanda, editData }) => {
                             } 
                         </select>
 
-                        <select name="altitude" className="bg-dark p-3 w-full flex flex-col rounded-md dark:bg-gray-800 shadow" onChange={handleChange} value={formData.altitude}>
-                            <option>ALTURA</option>
+                        <select name="altitude" className="bg-dark p-2 w-full flex flex-col rounded-md dark:bg-gray-800 shadow" onChange={handleChange} value={formData.altitude}>
+                            <option>Altura</option>
                             <option>5k</option>
+                            <option>8k</option>
                             <option>10k</option>
                             <option>12k</option>
                         </select>
 
-                        <select name="avion" className="bg-dark p-3 w-full flex flex-col rounded-md dark:bg-gray-800 shadow" onChange={handleChange} value={formData.avion}>
-                            <option>AVION</option>
+                        <select name="avion" className="bg-dark p-2 w-full flex flex-col rounded-md dark:bg-gray-800 shadow" onChange={handleChange} value={formData.avion}>
+                            <option>Avión</option>
                             <option>GRI</option>
                             <option>GYC</option>
                             <option>GSD</option>
                             <option>IFY</option>
                         </select>
 
+                        <div className="bg-dark p-2 w-full flex flex-col rounded-md dark:bg-gray-800 shadow">
+                            <div className="flex xl:flex-row flex-col">
+                                <label htmlFor="time" className="pr-2">Horario</label>
+                                <input className="bg-dark w-full" type="time"  name="time" onChange={handleChange} value={formData.time}/>
+                            </div>
+                        </div>
+
                         <div className="flex justify-end">
-                            <input class="bg-transparent hover:bg-active hover:text-white cursor-pointer font-semibold py-2 px-4 border border-blue-500 hover:border-transparent rounded mr-4" type="submit" value="Enviar"/>
+                            <input class="bg-transparent hover:bg-active hover:text-white cursor-pointer font-semibold py-2 px-4 border border-gray-400 rounded shadow mr-4" type="submit" value="Guardar"/>
                             <input class="bg-transparent hover:bg-active hover:text-white cursor-pointer font-semibold py-2 px-4 border border-gray-400 rounded shadow" type="reset" value="Cancelar" onClick={handleReset}/>
                         </div>
                 </form>
