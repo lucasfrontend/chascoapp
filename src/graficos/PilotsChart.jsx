@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Pie } from 'react-chartjs-2';
+/*
 import {Chart as ChartJS} from 'chart.js/auto'
-
+*/
 const datosPilots = [ 
     {
         id: 1,
@@ -16,7 +17,7 @@ const datosPilots = [
 ]
 
 const PilotsChart = () => {
-    
+  /*  
     const [tandas, setTandas] = useState(() => {
         const saveTandas = window.localStorage.getItem('tandasData');
         if(saveTandas) {
@@ -82,9 +83,12 @@ const PilotsChart = () => {
               borderWidth: 1,
         }]
     })
-
+    */
     return <>
+    <div className="">404 bla bla bla</div>
+    {/*
     <Pie data={pilotData}/>
+    */}
     </>
 
 }
