@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 //import { Pie } from 'react-chartjs-2';
 /*
 import {Chart as ChartJS} from 'chart.js/auto'
-*/
 const datosPilots = [ 
     {
         id: 1,
@@ -15,6 +14,7 @@ const datosPilots = [
         vuelos: 9
     },
 ]
+*/
 
 const PilotsChart = () => {
   /*  
@@ -85,10 +85,10 @@ const PilotsChart = () => {
     })
     */
     return <>
-    <div className="">404 bla bla bla</div>
-    {/*
-    <Pie data={pilotData}/>
-    */}
+        <div className="">404 bla bla bla</div>
+        {/*
+        <Pie data={pilotData}/>
+        */}
     </>
 
 }
