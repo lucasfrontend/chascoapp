@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ReactScrollableFeed from 'react-scrollable-feed'
 import Footer from "./Footer";
-import pink from '../../assets/aviones/pink.png'
 import green from '../../assets/aviones/green.png'
 import blue from '../../assets/aviones/blue.png'
 import cessna1 from '../../assets/aviones/cessna1.jpg'
